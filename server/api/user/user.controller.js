@@ -35,7 +35,23 @@ export function index(req, res) {
  * Creates a new user
  */
 export function create(req, res, next) {
+
+      // Create new user object
     var newUser = new User(req.body);
+
+    User.find({
+        name: newUser.name
+    }, '-salt -hashedPassword', function(err, users) {
+        if (err) return res.send(500, err);
+
+        if (users && users.length > 0) {
+            res.json(409, {
+                err: 'USERNAME_TAKEN',
+                message: 'Username already taken'
+            });
+        }
+    });
+
     newUser.provider = 'local';
     newUser.role = 'user';
     newUser.saveAsync()

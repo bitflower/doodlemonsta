@@ -1,11 +1,116 @@
 'use strict';
 
 var mongoose = require('bluebird').promisifyAll(require('mongoose'));
+var autoIncrement = require('bluebird').promisifyAll(require('mongoose-auto-increment'));
 
 var MonstaSchema = new mongoose.Schema({
-  name: String,
-  info: String,
-  active: Boolean
+    version: {
+        type: Number,
+        default: 1.0
+    },
+    name: String,
+    createdOn: {
+        type: Date,
+        default: Date.now
+    },
+    head: {
+        paperjs: [],
+        crossLines: [],
+        canvas: {
+            width: {
+                type: Number,
+                default: 0
+            },
+            height: {
+                type: Number,
+                default: 0
+            },
+            devicePixelRatio: {
+                type: Number,
+                default: 1
+            }
+        }
+    },
+    trunk: {
+        paperjs: [],
+        crossLines: [],
+        canvas: {
+            width: {
+                type: Number,
+                default: 0
+            },
+            height: {
+                type: Number,
+                default: 0
+            },
+            devicePixelRatio: {
+                type: Number,
+                default: 1
+            }
+        }
+    },
+    legs: {
+        paperjs: [],
+        crossLines: [],
+        canvas: {
+            width: {
+                type: Number,
+                default: 0
+            },
+            height: {
+                type: Number,
+                default: 0
+            },
+            devicePixelRatio: {
+                type: Number,
+                default: 1
+            }
+        }
+    },
+    complete: {
+        paperjs: [],
+        crossLines: [],
+        canvas: {
+            width: {
+                type: Number,
+                default: 0
+            },
+            height: {
+                type: Number,
+                default: 0
+            }
+        }
+    }
+});
+
+// needs Information
+MonstaSchema
+    .virtual('needs')
+    .get(function() {
+
+        if (this.head.paperjs.length === 0) {
+            return 'head';
+        } else {
+            if (this.trunk.paperjs.length === 0) {
+                return 'trunk';
+            } else {
+                if (this.legs.paperjs.length === 0) {
+                    return 'legs';
+                } else {
+                    return 'complete';
+                }
+            }
+        }
+    });
+
+MonstaSchema.set('toJSON', {
+    virtuals: true
+});
+
+// Auto increment _id as per standard
+MonstaSchema.plugin(autoIncrement.plugin, {
+    model: 'Monsta',
+    startAt: 1
 });
 
 export default mongoose.model('Monsta', MonstaSchema);

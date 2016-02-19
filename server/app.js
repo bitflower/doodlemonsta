@@ -10,12 +10,17 @@ mongoose.Promise = require('bluebird');
 import config from './config/environment';
 import http from 'http';
 
+var autoIncrement = require('mongoose-auto-increment');
+
 // Connect to MongoDB
 mongoose.connect(config.mongo.uri, config.mongo.options);
 mongoose.connection.on('error', function(err) {
     console.error('MongoDB connection error: ' + err);
     process.exit(-1);
 });
+
+// Init Autoincrement
+autoIncrement.initialize(mongoose.connection);
 
 // Populate databases with sample data
 if (config.seedDB) { require('./config/seed'); }

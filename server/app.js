@@ -11,6 +11,7 @@ import config from './config/environment';
 import http from 'http';
 
 var autoIncrement = require('mongoose-auto-increment');
+var bodyParser = require('body-parser');
 
 // Connect to MongoDB
 mongoose.connect(config.mongo.uri, config.mongo.options);
@@ -28,6 +29,23 @@ if (config.seedDB) { require('./config/seed'); }
 // Setup server
 var app = express();
 var server = http.createServer(app);
+
+// CORS
+var allowCrossDomain = function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Content-Length");
+    res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
+    next();
+
+};
+app.use(allowCrossDomain);
+
+// BODY PARSER
+app.use(bodyParser.json({
+    limit: '2mb'
+}))
+
+// Socket IO
 var socketio = require('socket.io')(server, {
     serveClient: config.env !== 'production',
     path: '/socket.io-client'

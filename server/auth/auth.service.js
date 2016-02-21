@@ -67,7 +67,7 @@ export function signToken(id, role) {
         _id: id,
         role: role
     }, config.secrets.session, {
-        expiresIn: 60 * 60 * 5
+        expiresIn: config.session.expiration // expressed in seconds or an string describing a time span rauchg/ms. Eg: 60, "2 days", "10h", "7d"
     });
 }
 

@@ -15,7 +15,7 @@ class LoginController {
 
     if (form.$valid) {
       this.Auth.login({
-        email: this.user.email,
+        username: this.user.name,
         password: this.user.password
       })
       .then(() => {

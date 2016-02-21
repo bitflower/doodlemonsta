@@ -1,17 +1,29 @@
 import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
 
-function localAuthenticate(User, email, password, done) {
+function localAuthenticate(User, username, password, done) {
+
+    // console.log('Searching user: ' + username);
+    
     User.findOneAsync({
-            email: email.toLowerCase()
+            name: username //.toLowerCase()
         })
         .then(user => {
+
+            // console.log('Found user: ', user); // OK !
+            
             if (!user) {
                 return done(null, false, {
-                    message: 'This email is not registered.'
+                    message: 'This username is not registered.'
                 });
             }
             user.authenticate(password, function(authError, authenticated) {
+
+                // console.log('user.authenticate', {
+                //     authError: authError,
+                //     authenticated: authenticated
+                // }); // OK!
+
                 if (authError) {
                     return done(authError);
                 }
@@ -26,10 +38,12 @@ function localAuthenticate(User, email, password, done) {
 }
 
 export function setup(User, config) {
+    // console.log('Setup passport local strategy'); // OK!
     passport.use(new LocalStrategy({
-        usernameField: 'email',
+        usernameField: 'username', // The field in the request body representing the username
         passwordField: 'password' // this is the virtual field on the model
-    }, function(email, password, done) {
-        return localAuthenticate(User, email, password, done);
+    }, function(username, password, done) {
+        // console.log('Passport localAuthenticate function');
+        return localAuthenticate(User, username, password, done);
     }));
 }

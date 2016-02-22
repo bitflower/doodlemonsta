@@ -36,7 +36,7 @@ export function index(req, res) {
  */
 export function create(req, res, next) {
 
-      // Create new user object
+    // Create new user object
     var newUser = new User(req.body);
 
     User.find({
@@ -127,6 +127,25 @@ export function me(req, res, next) {
                 return res.status(401).end();
             }
             res.json(user);
+        })
+        .catch(err => next(err));
+}
+
+/**
+ * Search a user by username
+ */
+export function search(req, res, next) {
+
+    var username = req.params.username;
+
+    User.findOneAsync({
+            name: username
+        })
+        .then(user => {
+            if (!user) {
+                return res.status(404).end();
+            }
+            res.json(user.profile);
         })
         .catch(err => next(err));
 }

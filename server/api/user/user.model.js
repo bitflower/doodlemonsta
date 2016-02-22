@@ -103,6 +103,13 @@ var validatePresenceOf = function(value) {
     return value && value.length;
 };
 
+UserSchema.set('toObject', {
+    virtuals: true
+});
+UserSchema.set('toJSON', {
+    virtuals: true
+});
+
 /**
  * Pre-save hook
  */

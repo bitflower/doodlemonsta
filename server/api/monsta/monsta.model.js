@@ -1,6 +1,7 @@
 'use strict';
 
 var mongoose = require('bluebird').promisifyAll(require('mongoose'));
+import { Schema } from 'mongoose';
 var autoIncrement = require('bluebird').promisifyAll(require('mongoose-auto-increment'));
 
 var MonstaSchema = new mongoose.Schema({
@@ -29,6 +30,10 @@ var MonstaSchema = new mongoose.Schema({
                 type: Number,
                 default: 1
             }
+        },
+        user: {
+            type: Schema.Types.ObjectId,
+            ref: 'User'
         }
     },
     trunk: {
@@ -47,6 +52,10 @@ var MonstaSchema = new mongoose.Schema({
                 type: Number,
                 default: 1
             }
+        },
+        user: {
+            type: Schema.Types.ObjectId,
+            ref: 'User'
         }
     },
     legs: {
@@ -65,6 +74,10 @@ var MonstaSchema = new mongoose.Schema({
                 type: Number,
                 default: 1
             }
+        },
+        user: {
+            type: Schema.Types.ObjectId,
+            ref: 'User'
         }
     },
     complete: {

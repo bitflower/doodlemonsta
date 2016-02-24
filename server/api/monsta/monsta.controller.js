@@ -16,6 +16,10 @@ function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
   return function(entity) {
     if (entity) {
+      // Populate users
+      // entity.populate('head.user');
+      // entity.populate('trunk.user');
+      // entity.populate('legs.user');
       res.status(statusCode).json(entity);
     }
   };

@@ -44,7 +44,7 @@ UserSchema
     .virtual('profile')
     .get(function() {
         return {
-            '_id': this._id,
+            '_id': this._id, // Wieder entfernen!
             'name': this.name,
             'role': this.role
         };

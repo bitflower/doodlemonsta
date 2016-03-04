@@ -59,6 +59,10 @@
         // localStorage.setItem('token', theToken);
         return theToken;
       }
+      if (window.opener) {
+        window.opener.postMessage(readCookie('token'), '*');
+      }
+      
     </script>
 
     <!--[if lt IE 9]>

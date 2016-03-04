@@ -4,14 +4,14 @@ import { Strategy as LocalStrategy } from 'passport-local';
 function localAuthenticate(User, username, password, done) {
 
     // console.log('Searching user: ' + username);
-    
+
     User.findOneAsync({
             name: username //.toLowerCase()
         })
         .then(user => {
 
             // console.log('Found user: ', user); // OK !
-            
+
             if (!user) {
                 return done(null, false, {
                     message: 'This username is not registered.'
@@ -30,7 +30,14 @@ function localAuthenticate(User, username, password, done) {
                 if (!authenticated) {
                     return done(null, false, { message: 'This password is not correct.' });
                 } else {
-                    return done(null, user);
+
+                    // Set last login date
+                    user.lastLogin = new Date();
+                    user.save(function(err, _user) {
+                        if (err) return done(err);
+                        return done(null, _user);
+                    });
+                    
                 }
             });
         })

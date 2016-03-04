@@ -17,19 +17,29 @@ export function setup(User, config) {
                 })
                 .then(user => {
                     if (user) {
-                        return done(null, user);
+
+                        // Set last login date
+                        user.lastLogin = new Date();
+                        user.save(function(err, _user) {
+                            if (err) return done(err);
+                            return done(null, _user);
+                        });
+
+                    } else {
+
+                        user = new User({
+                            name: profile.displayName,
+                            email: profile.emails[0].value,
+                            role: 'user',
+                            provider: 'facebook',
+                            facebook: profile._json
+                        });
+
+                        user.saveAsync()
+                            .then(user => done(null, user))
+                            .catch(err => done(err));
                     }
 
-                    user = new User({
-                        name: profile.displayName,
-                        email: profile.emails[0].value,
-                        role: 'user',
-                        provider: 'facebook',
-                        facebook: profile._json
-                    });
-                    user.saveAsync()
-                        .then(user => done(null, user))
-                        .catch(err => done(err));
                 })
                 .catch(err => done(err));
         }));

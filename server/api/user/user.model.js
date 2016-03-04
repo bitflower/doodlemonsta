@@ -27,6 +27,14 @@ var UserSchema = new Schema({
     salt: {
         type: String
     },
+    signedUp: {
+        type: Date,
+        default: Date.now
+    },
+    lastLogin: {
+        type: Date,
+        default: Date.now
+    },
     facebook: {},
     github: {},
     friends: [{

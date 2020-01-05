@@ -1,0 +1,87 @@
+// Colors
+// $light:                           #fff !default;
+// $stable:                          #f8f8f8 !default;
+$positive:                        #2196F3 !default;
+// $calm:                            #11c1f3 !default;
+$balanced:                        #4CAF52 !default;
+$energized:                       #FE5722 !default;
+$assertive:                       #E82662 !default;
+// $royal:                           #886aea !default;
+// $dark:                            #444 !default;
+
+$base-background-color:           $positive; // #fff !default;
+$base-color:                      #FFFFFF; // #000 !default;
+
+// Font
+$font-family-sans-serif:          'ElliotSix', "RobotoDraft", "Segoe UI", sans-serif !default;
+$font-size-base:                  14px;
+
+// Bar
+$bar-title-font-size:			  $font-size-base;
+$bar-default-bg:                  transparent;
+$bar-default-text:                $positive; //$bar-light-text !default;
+$bar-default-border: 			  transparent;
+
+// Modal
+$modal-bg-color:				  transparent;
+
+// Items
+$item-default-bg:                 transparent !default;
+// $item-default-border:             $item-light-border !default;
+// $item-default-text:               $item-light-text !default;
+// $item-default-active-bg:          #D9D9D9 !default;
+// $item-default-active-border:      $item-light-active-border !default;
+$item-font-size:                  $font-size-base; //16px !default;
+$item-border-width:               0; //1px !default;
+$item-padding:                    0; //$font-size-base / 2 !default; // 16px
+
+// Cards
+// -------------------------------
+
+// $card-header-bg:                  #F5F5F5 !default;
+$card-body-bg:                    transparent !default;
+// $card-footer-bg:                  #F5F5F5 !default;
+
+// $card-padding:                    10px !default;
+// $card-border-width:               1px !default;
+
+// $card-border-color:               #ccc !default;
+// $card-border-radius:              2px !default;
+$card-box-shadow:                 none !default;
+
+// Buttons
+$button-color:                    #222 !default;
+$button-block-margin:             10px !default;
+$button-clear-padding:            6px !default;
+$button-border-radius:            4px !default;
+$button-border-width:             1px !default;
+
+$button-font-size:                $font-size-base !default;
+$button-height:                   42px !default;
+$button-padding:                  12px !default;
+$button-icon-size:                24px !default;
+
+// $button-stable-bg:                $stable !default;
+// $button-stable-text:              #444 !default;
+// $button-stable-border:            #b2b2b2 !default;
+// $button-stable-active-bg:         #e5e5e5 !default;
+// $button-stable-active-border:     #a2a2a2 !default;
+
+$button-assertive-bg:             transparent !default;
+$button-assertive-text:           $assertive !default;
+$button-assertive-border:         darken($assertive, 10%) !default;
+$button-assertive-active-bg:      transparent !default;
+$button-assertive-active-border:  darken($assertive, 10%) !default;
+
+$button-balanced-bg:              transparent !default;
+$button-balanced-text:            $balanced !default;
+$button-balanced-border:          darken($balanced, 10%) !default;
+$button-balanced-active-bg:       transparent !default;
+$button-balanced-active-border:   darken($balanced, 10%) !default;
+
+$input-color:                     darken($positive, 10%) !default;
+// $input-border:                    $item-default-border !default;
+// $input-border-width:              $item-border-width !default;
+// $input-label-color:               $dark !default;
+$input-color-placeholder:         lighten($positive, 10%) !default;
+

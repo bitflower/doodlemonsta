@@ -1,0 +1,31 @@
+.half {
+  .list {
+    width: 40%;
+    padding-left: 10%;
+    padding-top: 24vw; //12%;
+  }
+  &.right {
+    .list {
+      width: 90%;
+      padding-left: 60%;
+    }
+  }
+}
+
+// Paddings
+.top-25 {
+  .list {
+    padding-top: 12vh;
+    @include breakpoint($to-800) {
+      padding-top: 8vh;
+    }
+    @include breakpoint($to-568) {
+      padding-top: 5vh;
+    }
+  }
+}
+
+.list {
+  max-width: 667px;
+  margin: auto;
+}

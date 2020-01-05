@@ -1,0 +1,11 @@
+.item {
+	// Paddings versions
+	&.item-narrow {
+		padding-top: 0;
+		padding-bottom: 3px;
+	}
+	// TYPE inside items
+    h1 {
+        text-overflow: initial;
+    }
+}

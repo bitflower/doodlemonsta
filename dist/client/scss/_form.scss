@@ -1,0 +1,48 @@
+.item {
+    padding: 6px 16px;
+    input {
+        font-family: RobotoDraft;
+        font-weight: 400;
+        line-height: $font-size-base + 4; // 1;
+        font-size: $font-size-base + 2;
+        padding: 11px 16px;
+        border-radius: 99px;
+        background-color: rgba(255, 255, 255, 0.7);
+        @include margins();
+        // box-shadow: 0px 1px darken($positive, 10%);
+        // Validity
+        transition: background 0.25s ease;
+        &.ng-dirty {
+            &.ng-invalid {
+                background-color: $energized;
+                border: 0.5px solid darken($energized, 10%);
+                color: lighten($energized, 40%);
+            }
+        }
+        //Sizes
+        &.small {
+            width: 200px;
+        }
+        &.medium {
+            width: 300px;
+        }
+        &.large {
+            width: 450px;
+        }
+        &.outline {
+            background-color: transparent;
+            border: 0.5px solid $positive;
+        }
+    }
+}
+
+form {
+	// border-radius: 20px;
+	// border: 1px solid rgba(255, 255, 255, 0.2);
+	// background-color: rgba(255, 255, 255, 0.1);
+	padding-top: 9px;
+	&.medium {
+		max-width: 332px;
+		margin: auto;
+	}
+}

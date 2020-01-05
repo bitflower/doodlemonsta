@@ -1,0 +1,17 @@
+<ion-view>
+    <ion-content class="no-header">
+        <ion-list class="top-25">
+            <form name="form" class="medium" ng-submit="testOpenFB(form)" novalidate>
+<!--                 <ion-item class="item-narrow">
+                    <input type="text" class="outline medium-top-margin medium" ng-model="state.searchData.username" placeholder="Your friend's name!" ng-required="true" ng-minlength="3" ng-maxlength="25" ng-trim="true">
+                </ion-item> -->
+                <ion-item class="text-right item-narrow">
+                    <button class="button button-positive" type="submit">Search</button>
+                </ion-item>
+                <ion-item class="" ng-repeat="user in state.results">
+                    <button class="button button-positive icon-left ion-person large no-margin" type="button" ng-click="selectUser(user)" ng-bind="user.name"></button>
+                </ion-item>
+            </form>
+        </ion-list>
+    </ion-content>
+</ion-view>

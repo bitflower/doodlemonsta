@@ -1,0 +1,117 @@
+.svg-button {
+    cursor: pointer;
+    // stroke: #8FC7FF;
+    transform: scale(0.95);
+    stroke-width: $border-width;
+    &.border {
+        stroke: #FFFFFF;
+    }
+    // IONIC's tap system
+    &.activated,
+    &.active {
+        stroke: #FFFFFF;
+        transform: scale(0.9) !important;
+        stroke-width: $border-width;
+        circle {
+            stroke: #FFFFFF;
+        }
+        .ignore {
+            stroke: initial;
+        }
+        .fill {
+            fill: #FFFFFF !important;
+        }
+        transition-delay: 0s !important;
+    }
+}
+
+.material-pop {
+    transform-origin: center center;
+    &.pop {
+        transform: scale(45) !important;
+        transition: transform 0.75s ease !important;
+    }
+}
+
+// IONIC Button
+.button {
+    font-family: "RobotoDraft";
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 11px 16px; // Material guidelines
+    line-height: 1;
+    min-height: 36px;
+    box-shadow: 0px 3px darken($positive, 10%);
+    // &.round {
+    border-radius: 99px;
+    // }
+    margin-bottom: $button-block-margin;
+    margin-top: $button-block-margin;
+    min-width: 120px;
+    &.activated,
+    &.active {
+        transform: translateY(3px);
+    }
+    @include margins();
+    // ALIGN
+    &.text-left {
+        text-align: left;
+    }
+    // SIZES
+    &.large {
+        min-width: 300px; //310px;
+    }
+    // ICONS
+    &.icon-right {
+        &:before {
+            float: right;
+            padding-right: 0;
+            padding-left: .5em;
+        }
+    }
+    // Inline icon
+    .icon {
+        &.icon-left {
+            float: left;
+            padding-right: 0.5em;
+        }
+    }
+    .icon:before,
+    &.icon:before,
+    &.icon-left:before,
+    &.icon-right:before {
+        // padding-bottom: ($button-border-width * 2);
+        // font-size: $button-large-icon-size;
+        line-height: $font-size-base;
+    }
+    // FACEBOOK
+    &.facebook {
+        background: linear-gradient(#4c69ba, #3b55a0);
+        text-transform: none;
+        border-width: 0;
+        font-family: "Helvetica neue";
+        -webkit-font-smoothing: antialiased;
+        text-shadow: 0 -1px 0 #354c8c;
+        box-shadow: 0px 3px darken(#3b55a0, 10%);
+        &:before {
+            line-height: 0.6;
+            padding-right: 0.5em;
+        }
+    }
+}
+
+.button-large {
+    // padding: 0 $button-large-padding;
+    // min-width: ($button-large-padding * 3) + $button-large-font-size;
+    // min-height: $button-large-height + 5;
+    // font-size: $button-large-font-size;
+    // line-height: $button-large-height - $button-border-width;
+    .icon:before,
+    &.icon:before,
+    &.icon-left:before,
+    &.icon-right:before {
+        // padding-bottom: ($button-border-width * 2);
+        // font-size: $button-large-icon-size;
+        line-height: $font-size-base + 6; // $button-large-height - ($button-border-width * 2) - 1;
+    }
+}

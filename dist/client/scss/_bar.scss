@@ -1,0 +1,13 @@
+.bar {
+    .title {
+        color: $light;
+    }
+}
+
+.platform-android {
+    .bar {
+        .title {
+            font-size: $font-size-base;
+        }
+    }
+}

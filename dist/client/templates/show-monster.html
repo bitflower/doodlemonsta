@@ -1,0 +1,12 @@
+<ion-view view-title="">
+    <ion-content scroll="false" class="no-header">
+        <!-- NEXT BUTTON -->
+        <svg id="next" class="bottom right margin material-pop" ng-style="state.nextStyles" width="10%" height="20%" viewBox="0 0 73 79" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+            <g id="draw-play">
+                <path id="play" class="svg-button border my-bounce" ng-click="next()" d="M58.99,38.973c1.727,1.209 2.756,3.186 2.756,5.294c0,2.109 -1.029,4.085 -2.756,5.295c-8.065,5.647 -20.886,14.624 -29.832,20.889c-1.974,1.382 -4.554,1.551 -6.692,0.438c-2.138,-1.113 -3.479,-3.323 -3.479,-5.733c0,-11.927 0,-29.85 0,-41.778c0,-2.41 1.341,-4.62 3.479,-5.733c2.138,-1.112 4.718,-0.943 6.692,0.439c8.946,6.264 21.767,15.241 29.832,20.889Z" style="fill:#8c00ff;" />
+            </g>
+        </svg>
+        <!-- CANVAS -->
+        <canvas class="myCanvas" draw ng-model="drawData.monstaData" canvas-info="drawData.canvasInfo" fade-canvas="state.fadeCanvas"></canvas>
+    </ion-content>
+</ion-view>

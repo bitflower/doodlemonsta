@@ -1,0 +1,46 @@
+<ion-view>
+    <ion-content class="no-header">
+        <ion-list class="top-25">
+            <form name="form" class="medium" ng-submit="searchUser(form)">
+                <ion-item class="text-center">
+                    <h1 class="title">SELECT DOODLERS</h1>
+                    <svg viewBox="50 170 800 80">
+                        <use xlink:href="img/app-title.svg#Woosh"></use>
+                    </svg>
+                </ion-item>
+                <ion-item class="text-center">
+                    <button class="button button-large large button-positive no-bottom-margin icon-right ion-chevron-right text-left" ng-click="selectPlayer('head')">
+                        <div class="icon icon-left">
+                            <span class=" ion-person"> </span>
+                        </div>
+                        Head: {{state.monsta.head.user.name}}
+                    </button>
+                </ion-item>
+                <ion-item class="text-center">
+                    <button class="button button-large large button-positive no-margin icon-right ion-chevron-right text-left" ng-click="selectPlayer('stomach')">
+                        <div class="icon icon-left">
+                            <span class=" ion-person"> </span>
+                        </div>
+                        Body: {{state.monsta.stomach.user.name}}
+                    </button>
+                </ion-item>
+                <ion-item class="text-center">
+                    <button class="button button-large large button-positive no-margin icon-right ion-chevron-right text-left" ng-click="selectPlayer('legs')">
+                        <div class="icon icon-left">
+                            <span class=" ion-person"> </span>
+                        </div>
+                        Legs: {{state.monsta.legs.user.name}}
+                    </button>
+                </ion-item>
+                <ion-item class="text-right">
+                    <button class="button button-positive" ng-click="startDrawing()">
+<!--                         <div class="icon icon-left">
+                            <span class=" ion-person"> </span>
+                        </div> -->
+                        Start !
+                    </button>
+                </ion-item>
+            </form>
+        </ion-list>
+    </ion-content>
+</ion-view>

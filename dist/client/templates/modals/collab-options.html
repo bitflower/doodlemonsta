@@ -1,0 +1,46 @@
+<ion-modal-view>
+    <ion-header-bar align-title="center">
+        <h1 class="title">Who's next?</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div class="card">
+            <div class="item item-text-wrap text-center">
+                <button class="button button-balanced" ng-click="hideCollabOptions()">
+                    My friend on this device
+                </button>
+            </div>
+            <div class="item item-text-wrap text-center">
+                <button class="button button-assertive" ng-click="sendWhatsapp()">
+                    Invite a friend on WhatsApp
+                </button>
+            </div>
+            <!--             <div class="item item-text-wrap text-center">
+                <button class="button button-assertive" ng-click="sendMail()">
+                    Invite a friend on Facebook
+                </button>
+            </div> -->
+            <div class="item item-text-wrap text-center">
+                <button class="button button-assertive" ng-click="sendMail()">
+                    Invite a friend by e-mail
+                </button>
+            </div>
+            <!--             <div class="item item-text-wrap text-center">
+                <button class="button button-assertive" ng-click="sendMail()">
+                    Invite a friend via SMS
+                </button>
+            </div> -->
+            <!--             <div class="item item-text-wrap text-center">
+                <button class="button button-assertive" ng-click="copyLink()">
+                    Copy link
+                </button>
+            </div> -->
+<!--             <button onclick="window.plugins.socialsharing.canShareVia('com.tencent.mm/com.tencent.mm.ui.tools.ShareToTimeLineUI', 'msg', null, img, null, function(e){alert(e)}, function(e){alert(e)})">is WeChat available on Android?</button>
+            <button onclick="window.plugins.socialsharing.canShareVia('com.apple.social.facebook', 'msg', null, null, null, function(e){alert(e)}, function(e){alert(e)})">is facebook available on iOS?</button>
+            // this one requires whitelisting of whatsapp:// on iOS9 in your .plist file
+            <button onclick="window.plugins.socialsharing.canShareVia('whatsapp', 'msg', null, null, null, function(e){alert(e)}, function(e){alert(e)})">is WhatsApp available?</button>
+            <button onclick="window.plugins.socialsharing.canShareVia('sms', 'msg', null, null, null, function(e){alert(e)}, function(e){alert(e)})">is SMS available?</button>
+            <button onclick="window.plugins.socialsharing.canShareVia('instagram', 'msg', null, null, null, function(e){alert(e)}, function(e){alert(e)})">is Instagram available?</button>
+            <button onclick="window.plugins.socialsharing.canShareViaEmail(function(e){alert(e)}, function(e){alert(e)})">is Email available?</button> -->
+        </div>
+    </ion-content>
+</ion-modal-view>

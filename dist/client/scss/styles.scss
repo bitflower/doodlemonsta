@@ -1,0 +1,51 @@
+@import "roboto/robotodraft";
+
+@import "variables";
+@import "_helpers";
+@import "_type";
+@import "_item";
+@import "_fonts";
+@import "_form";
+@import "_home.scss";
+@import "_animations";
+@import "_buttons";
+@import "_modal";
+@import "_bar";
+@import "_list";
+
+@import "_draw-canvas";
+
+// .dmShareOptions {
+//     height: 100%;
+//     margin-top: -1px;
+//     .friend {
+//         background-image: url("../img/shareOptionsDrawn.png");
+//         background-position: center 1%;
+//         background-size: 120% auto;
+//     }
+//     .friendGeo {
+//         background-image: url("../img/shareOptionsDrawn.png");
+//         background-position: center 1%;
+//         background-size: 120% auto;
+//     }
+//     .facebook {
+//         background-image: url("../img/shareOptionsDrawn.png");
+//         background-position: center 24%;
+//         background-size: 130% auto;
+//     }
+//     .whatsapp {
+//         background-image: url("../img/shareOptionsDrawn.png");
+//         background-position: center 71%;
+//         background-size: 100% auto;
+//     }
+//     .email {
+//         background-image: url("../img/shareOptionsDrawn.png");
+//         background-position: center 44%;
+//         background-size: 80% auto;
+//     }
+//     .sms {
+//         background-image: url("../img/shareOptionsDrawn.png");
+//         background-position: center 97%;
+//         background-size: 100% auto;
+//     }
+// }

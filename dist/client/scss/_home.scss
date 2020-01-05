@@ -1,0 +1,240 @@
+body {
+    background-color: #8FC7FF;
+}
+
+svg {
+    position: absolute;
+    // Basic layouts
+    &.bottom {
+        bottom: 0;
+        &.margin {
+            margin-bottom: 3%;
+        }
+    }
+    &.left {
+        left: 0;
+        &.margin {
+            margin-left: 3%;
+        }
+    }
+    &.right {
+        right: 0;
+        &.margin {
+            margin-right: 3%;
+        }
+    }
+    &.top {
+        top: 0;
+    }
+}
+
+// SVG inside IONIC list / item
+.item {
+    svg {
+        position: relative;
+        max-width: 667px;
+        @include breakpoint($to-800) {
+            max-width: 480px;
+        }
+        @include breakpoint($to-568) {
+            max-width: 380px;
+        }
+    }
+}
+
+// Green gras placeholder at the bottom
+div.gras {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    background-color: #8bc24a;
+    z-index: -1;
+    // transition: opacity 0.5s ease;
+}
+
+// Place SVG 1 level above 
+.scroll-content {
+    svg,
+    path {
+        z-index: 3;
+    }
+}
+
+// Remove IONIC Background colors
+.pane,
+.view {
+    background-color: transparent;
+}
+
+// ADVICE
+#advice {
+    transform-origin: center;
+    opacity: 0;
+    text {
+        text-anchor: middle;
+    }
+}
+
+// APP TITLE
+svg#app-title {
+    // z-index: 1;
+    g {
+        // transition: transform 0.5s ease, opacity 0.5s ease;
+        &#app-caption {
+            transform: translateX(-150%);
+            text {
+                stroke: #fff;
+                stroke-width: 1px;
+            }
+        }
+    }
+}
+
+// game-layout-modes
+svg#game-layout {
+    g {
+        // transition: transform 0.5s ease, opacity 0.5s ease;
+        &#back-scene {
+            transform-origin: bottom right;
+        }
+        &#monster {
+            path {
+                // transition: all 0.25s ease;
+            }
+        }
+    }
+}
+
+svg#next {
+    // transition: transform 0.4s ease, opacity 0.5s ease;
+    transform: translateX(150%);
+    &.left {
+        transform: translateX(-150%);
+    }
+}
+
+body {
+    &.no-backdrop {
+        .modal-backdrop {
+            .modal-backdrop-bg {
+                background: none;
+            }
+        }
+    }
+    &.show-app-caption {
+        svg#app-title {
+            g#app-caption {
+                transform: translateX(0%);
+            }
+        }
+    }
+    &.hide-monster {
+        svg#game-layout {
+            g#monster {
+                opacity: 0;
+            }
+        }
+    }
+    &.highlight-head {
+        svg#game-layout {
+            g#monster {
+                g#legs {
+                    path {
+                        stroke: $gray-light !important;
+                        fill: $gray-light !important;
+                    }
+                }
+                g#stomach {
+                    path {
+                        stroke: $gray-light !important;
+                        fill: $gray-light !important;
+                    }
+                }
+            }
+        }
+    }
+    &.highlight-stomach {
+        svg#game-layout {
+            g#monster {
+                g#head {
+                    path {
+                        stroke: $gray-light !important;
+                        fill: $gray-light !important;
+                    }
+                }
+                g#legs {
+                    path {
+                        stroke: $gray-light !important;
+                        fill: $gray-light !important;
+                    }
+                }
+            }
+        }
+    }
+    &.highlight-legs {
+        svg#game-layout {
+            g#monster {
+                g#head {
+                    path {
+                        stroke: $gray-light !important;
+                        fill: $gray-light !important;
+                    }
+                }
+                g#stomach {
+                    path {
+                        stroke: $gray-light !important;
+                        fill: $gray-light !important;
+                    }
+                }
+            }
+        }
+    }
+    &.push-back-scene {
+        svg#game-layout {
+            g#back-scene {
+                opacity: 0;
+            }
+            g#clouds-top {
+                opacity: 0;
+            }
+        }
+        div.gras {
+            opacity: 0;
+        }
+    }
+    &.hide-background {
+        svg#game-layout {
+            #background {
+                fill-opacity: 0.1;
+            }
+        }
+    }
+    &.hide-kids {
+        svg#game-layout {
+            g#kids-with-bord {
+                opacity: 0;
+            }
+        }
+    }
+    &.show-advice {
+        svg#game-layout {
+            g#advice {
+                opacity: 1;
+            }
+        }
+    }
+    &.show-next {
+        svg#next {
+            transform: translateX(0%);
+        }
+    }
+    &.disable-next {
+        svg#next {
+            path {
+                fill: $gray !important;
+                stroke: $gray-light;
+            }
+        }
+    }
+}

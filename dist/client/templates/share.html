@@ -1,0 +1,13 @@
+<ion-view view-title="">
+    <ion-content scroll="false">
+        <div class="list dmShareOptions">
+            <a class="item item-avatar item-icon-right" ng-href="{{value.href}}" ng-click="{{value.onClickFunction}}" ng-repeat="(key, value) in shareOptions" ng-style="{{setStyle()}}" ng-class="value.name">
+                <!-- <img src="venkman.jpg"> -->
+                <!-- <h2>{{value.name}}</h2> -->
+                <!-- <p>{{value.description}}</p> -->
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </a>
+            <!-- ui-sref="app.share{{value.name}}"  -->
+        </div>
+    </ion-content>
+</ion-view>

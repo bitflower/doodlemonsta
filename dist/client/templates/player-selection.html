@@ -1,0 +1,29 @@
+<ion-view>
+    <ion-content class="no-header">
+        <ion-list class="top-25">
+            <form name="form" class="medium" ng-submit="searchUser(form)">
+                <ion-item class="divider text-center">
+                    Find friend
+                </ion-item>
+                <ion-item class="item-narrow">
+                    <button class="button button-positive icon-left ion-search large no-margin" type="button" ng-click="searchLocal()">Search user</button>
+                </ion-item>
+                <ion-item class="">
+                    <button class="button button-positive icon-left ion-social-facebook large no-margin" type="button" ng-click="searchFacebook()">Facebook friends</button>
+                </ion-item>
+                <ion-item class="divider text-center">
+                    Your friends
+                </ion-item>
+                <ion-item class="">
+                    <button class="button button-positive large no-margin" type="button" ng-click="inviteExternal()">
+                        <h1>Invite</h1>
+                        <h4>Invite friends to Doodle Monsta</h4>
+                    </button>
+                </ion-item>
+                <ion-item class="" ng-repeat="friend in state.friendList">
+                    <button class="button button-positive large no-margin" type="button" ng-bind="friend.name" ng-click="selectPlayer(friend)"></button>
+                </ion-item>
+            </form>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -3,5 +3,5 @@ angular
 
   .constant("Config", {
     // backendUrl: "http://localhost:9000/"
-    backendUrl: "http://doodlemonsta.herokuapp.com/"
+    backendUrl: "https://doodlemonsta.herokuapp.com/"
   });

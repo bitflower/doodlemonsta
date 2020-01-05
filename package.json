@@ -107,8 +107,8 @@
     "supertest": "^1.1.0"
   },
   "engines": {
-    "node": "^4.2.3",
-    "npm": "^2.14.7"
+    "node": "^10.15.0",
+    "npm": "^6.11.3"
   },
   "scripts": {
     "start": "node server",

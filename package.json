@@ -111,7 +111,7 @@
     "npm": "^6.11.3"
   },
   "scripts": {
-    "start": "node dist/server",
+    "start": "cd dist && node server",
     "test": "gulp test",
     "update-webdriver": "node node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update",
     "build": "gulp build"

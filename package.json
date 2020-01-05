@@ -111,9 +111,10 @@
     "npm": "^6.11.3"
   },
   "scripts": {
-    "start": "node server",
+    "start": "node dist/server",
     "test": "gulp test",
-    "update-webdriver": "node node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update"
+    "update-webdriver": "node node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update",
+    "build": "gulp build"
   },
   "private": true
 }
